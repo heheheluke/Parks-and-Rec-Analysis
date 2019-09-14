@@ -48,3 +48,4 @@ def get_sorted(character, term_freq):
 
 #Generate the inverse document frequency (IDF) for a set of transcriptions.
 def idf():
+    pass
