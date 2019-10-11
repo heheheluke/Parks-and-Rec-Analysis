@@ -1,7 +1,3 @@
-#TO DO: 
-#1) Stop words for TF
-#2) IDF
-
 #Methods for computing term frequencies, inverse document frequencies (idf) in order to create tf-idf matrix for
 #the words spoken by characters on the tv show Parks and Recreation.
 
@@ -12,7 +8,7 @@ import math
 
 #-----------------------------------------------------------------------------------------
 
-#Stop words list pulled from NLTK, with some added myself (largely contractions, due to removing all punctuation) 
+#Stop words list pulled from NLTK, with some added myself (largely contractions, due to removing all punctuation, e.g. "im", "ive") 
 stop_words = ["i", "ive", "im", "id" ,"me", "my", "myself", "we", "our", "ours", "ourselves",
 "you", "your", "yours", "youre", "yourself", "yourselves", "he", "him", "his", "himself",
 "she", "her", "hers", "herself", "ill", "it", "its", "itself", "they", "them", "their",
@@ -32,6 +28,19 @@ def import_trans():
     f = open(transcription, 'r')
     t_out = csv.reader(f)
     return t_out
+
+#Returns the characters present in the transcript.
+def get_characters():
+    output = []
+    temp = import_trans()
+    for row in temp:
+
+        #Ignore lines that haven't been attributed to a character.
+        if row[0] == '':
+            continue
+        if row[0] not in output:
+            output.append(row[0])
+    return output
 
 #-------------------TF FUNCTIONS--------------------------------------------------------------
 
@@ -85,12 +94,11 @@ def get_sorted_tf(character, stop_w = True):
     return sorted(term_freq[character].items(), key = lambda x: x[1], reverse = True)
 
 
-#----------------------------------IDF FUNCTIONS---------------------------------
 
 #Generate the inverse document frequency (IDF), as a Python dictionary, for a set of transcriptions. Specifically, for each character, this function will output
 #each word's IDF value corresponding to each character.
 
-#Notes: currently uses natural logarithmic weighting.
+#Notes: currently uses base-10logarithmic weighting.
 
 #Example: idf() = {...'Leslie Knope' : {...'word1' : 0.5, 'word2' : .1, ...} ... }
 def idf(stop_w = True):
@@ -140,17 +148,43 @@ def idf(stop_w = True):
 
         #Divide the document appearance frequency by the total number of lines spoken by the character (i.e. total number of documents),
         #then take the log of the inverse.
-        word_freqs.update((k, math.log(len(c_only_trans)/v) ) for k,v in word_freqs.items())
+        word_freqs.update((k, math.log(len(c_only_trans)/v, 10) ) for k,v in word_freqs.items())
         #Add the character's idf to the final output
         output[c] = word_freqs
 
     return output
 
 
-#Return a given character's list of words by TF * IDF weighting, sorted from highest to lowest. Optional parameter to round the numbers for readability.
-def tf_idf(character, stop_w = True, r_pts = 10):
+#Return a given character's list of words by TF * IDF weighting, sorted from highest to lowest. Optional parameter to round the numbers for readability (default 10).
+def tf_idf_char(character, stop_w = True, r_pts = 10):
     char_tf = term_frequency(stop_w)[character]
     char_idf = idf(stop_w)[character]
     
+    #Compute the tf_idf for each word
     output = {word : round(char_tf[word] * char_idf[word], r_pts) for word in char_tf.keys()}
-    return sorted(output.items(), key = lambda x: x[1], reverse = True)
+    return output
+
+#Returns the tf_idf of each word for a character, sorted (for printing, mostly)
+def sorted_tf_idf_char(character, stop_w = True, r_pts = 10):
+    temp = tf_idf_char(character, stop_w, r_pts)
+    return sorted(temp.items(), key = lambda x: x[1], reverse = True)
+
+
+#Write the total tf_idf scores for every character and word to file. 
+def write_to_file(stop_w = True, r_pts = 10):
+    fieldnames = ["Character", "Word", "TF-IDF"]
+    target = r'C:\Users\heheh\Desktop\work\P-and-R-analysis\tf_idf_full.csv'
+    target = open(target, 'w', newline='')
+    writer = csv.DictWriter(target, fieldnames=fieldnames)
+    
+    #For each character, get their TF-IDF dictionaries and write to the file.
+    c = get_characters()
+    print(c)
+    for character in c:
+        print("Writing words for character: " + character)
+        tf_idf = tf_idf_char(character, stop_w, r_pts)
+        for word in tf_idf:
+            writer.writerow({"Character": character, "Word": word, "TF-IDF": tf_idf[word]})
+
+#Create complete CSV file; comment out if you don't want it to.
+write_to_file()
