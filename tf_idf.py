@@ -5,6 +5,7 @@ import csv
 import sys
 import re
 import math
+import string
 
 #-----------------------------------------------------------------------------------------
 
@@ -20,12 +21,12 @@ stop_words = ["i", "ive", "im", "id" ,"me", "my", "myself", "we", "our", "ours",
 "up", "down", "in", "out", "on", "off", "over", "under", "again", "further", "then", "once", 
 "here", "there", "when", "where", "why", "how", "all", "any", "both", "each", "few", "more", 
 "most", "other", "some", "such", "no", "nor", "not", "only", "own", "same", "so", "than",
-"too", "very", "s", "t", "can", "will", "just", "don", "should", "now"]
+"too", "very", "s", "t", "can", "will", "just", "don", "should", "now", "oh"]
 
-#Import the transcriptions, iterate through each line.
+#Import the transcriptions and returns a csv reader object. Avoids redundant code.
 def import_trans():
     transcription = r"C:\Users\heheh\Desktop\work\P-and-R-analysis\data\p_r_scripts_final_two.csv"
-    f = open(transcription, 'r')
+    f = open(transcription, 'r', encoding='Latin 1')
     t_out = csv.reader(f)
     return t_out
 
@@ -58,8 +59,11 @@ def term_frequency(stop_w = True):
 
     for l in t_reader:
         speaker = l[0]
-        line = l[1].lower().strip()     #Lowercase, remove whitespace, remove punctuation
-        line = re.sub(r'[^\w\s]','', line) 
+        line = l[1]
+        line = line.lower()                             #Lowercase, remove whitespace, remove punctuation
+        for p in string.punctuation:
+            line = line.replace(p, '')
+        line.strip() 
 
         if speaker == '': #Ignore lines not assigned to characters (unfinished transcription)
             continue
@@ -96,64 +100,94 @@ def get_sorted_tf(character, stop_w = True):
 
 
 #Generate the inverse document frequency (IDF), as a Python dictionary, for a set of transcriptions. Specifically, for each character, this function will output
-#each word's IDF value corresponding to each character.
+#each word's IDF value corresponding to each character. Each "document" is defined as an episode (previously, per line, un-ideal).
 
-#Notes: currently uses base-10logarithmic weighting.
+#Notes: currently uses base-10 logarithmic weighting.
 
 #Example: idf() = {...'Leslie Knope' : {...'word1' : 0.5, 'word2' : .1, ...} ... }
 def idf(stop_w = True):
 
-    output = {}
-
+    #Convert lines to dictionary for easier parsing, as a list of tuples. Skips any unlabeled lines.
     t_reader = import_trans()
-
-    #Convert lines to dictionary for easier parsing
     transcription = []        
     for l in t_reader:
-        speaker = l[0]
-        line = l[1].lower().strip()                             #Lowercase, remove whitespace, remove punctuation
-        line = re.sub(r'[^\w\s]','', line) 
-        if (speaker == '' or speaker == 'Character'):
-            continue
         
-        to_add = (speaker, line)
+        speaker = l[0]
+        temp_line = l[1]
+        if (speaker == '' or speaker == 'Character') and ("Season: " not in temp_line and "Episode: " not in temp_line): #Ignore unattributed lines, except for those that delineate a new episode.
+            continue
+        else:
+            temp_line = temp_line.lower()                             #Lowercase, remove whitespace, remove punctuation
+            for p in string.punctuation:
+                temp_line = temp_line.replace(p, '')
+            temp_line.strip() 
+        
+        to_add = (speaker, temp_line)
         transcription.append(to_add)
 
-    #Grab list of characters
+    output = {}
+    episode_words = {} #Maintain a list of words spoken for each character for a single episode.
     characters = [i[0] for i in transcription]
-    characters = list(set(characters)) 
+    characters = list(set(characters))
 
+    #Create dictionary entries for each character, where key = character and value = words spoken
     for c in characters:
-        c_only_trans = [l[1] for l in transcription if c == l[0]] #Isolate the lines for which c is the speaker 
+        output[c] = {}
+        episode_words[c] = [] #Only need to maintain which words have been said
 
-        #Go through each line; for each word, increment the document appearance count.
-        word_freqs = {}
-        for line in c_only_trans:
-            already_appeared = [] #Maintain a list of words that have already appeared in the line, that will reset per line
+    transcript_line_number = 0 #Track the line of the transcript the loop is currently processing.
+    episode_number = 0 #Track the episode number.
+    
+    for line in transcription:
+        transcript_line_number = transcript_line_number + 1
+        #For each episode, maintain a list of words that the character has spoken. After each episode, update the overall tracker; at the end, should be aggregate count.
 
-            for word in line.split():
 
-                if ((word in stop_words) and (stop_w == True)):     #Check for stop words
-                    continue
-
-                if word in already_appeared: #Skip words that have already appeared
-                    continue
+        #print(str(transcript_line_number) + ": " + line[1])
+        #Detect whether we've reached a new episode. If so, update the overall output with a total count of document appearances per word, per character, then reset episode_words.
+        if ("season " in line[1] and "episode " in line[1]) or line[1] == 'line':
+            for person in episode_words.keys():
+                words_appeared = episode_words[person]                
                 
-                if word in word_freqs: 
-                    word_freqs[word] = word_freqs[word] + 1
+                #Go through each word that was spoken in the episode by the character. Increment the count for all words that appear.
+                for word in words_appeared:
+                    if word in output[person]:
+                        output[person][word] = output[person][word] + 1
+                    else:
+                        output[person][word] = 1
+
+                episode_words[person] = {} #Reset the words that have appeared in the episode in question for this character.
+            episode_number = episode_number+1 #Update the episode number.
+
+        else:
+            for word in line[1].split():
+                if (word in stop_words) and (stop_w == True): #Check for stop words
+                    continue
+                if len(episode_words[line[0]]) == 0: #If the list of spoken words for the character is empty, create a list.
+                    episode_words[line[0]] = [word]
+                elif word not in episode_words[line[0]]: #Add the word to list of spoken words for the character attributed to the line
+                    episode_words[line[0]].append(word)
                 else:
-                    word_freqs.update({word : 1})
+                    continue
+        
+        #DETECT THE LAST LINE, because there will be no "new episode" indicator, using the line number tracker; do what you would do as if a new episode was beginning.
+        if transcript_line_number == len(transcription):
+            for person in episode_words.keys():
+                words_appeared = episode_words[person]                
                 
-                already_appeared.append(word)
+                #Go through each word that was spoken in the episode by the character. Increment the count for all words that appear.
+                for word in words_appeared:
+                    if word in output[person]:
+                        output[person][word] = output[person][word] + 1
+                    else:
+                        output[person][word] = 1
 
-        #Divide the document appearance frequency by the total number of lines spoken by the character (i.e. total number of documents),
-        #then take the log of the inverse.
-        word_freqs.update((k, math.log(len(c_only_trans)/v, 10) ) for k,v in word_freqs.items())
-        #Add the character's idf to the final output
-        output[c] = word_freqs
+    #Compute the actual IDF scores for each word.
+    for c in characters:
+        for word in output[c]:
+            output[c][word] = math.log(episode_number/(output[c][word]), 10) #IDF = log(N / n), where N = total number of episodes, n = episodes the word appears in.
 
     return output
-
 
 #Return a given character's list of words by TF * IDF weighting, sorted from highest to lowest. Optional parameter to round the numbers for readability (default 10).
 def tf_idf_char(character, stop_w = True, r_pts = 10):
