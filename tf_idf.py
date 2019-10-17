@@ -25,7 +25,7 @@ stop_words = ["i", "ive", "im", "id" ,"me", "my", "myself", "we", "our", "ours",
 
 #Import the transcriptions and returns a csv reader object. Avoids redundant code.
 def import_trans():
-    transcription = r"C:\Users\heheh\Desktop\work\P-and-R-analysis\data\p_r_scripts_final_two.csv"
+    transcription = r"C:\Users\heheh\Desktop\work\P-and-R-analysis\data\p_r_scripts_final.csv"
     f = open(transcription, 'r', encoding='Latin 1')
     t_out = csv.reader(f)
     return t_out
@@ -97,8 +97,26 @@ def get_sorted_tf(character, stop_w = True):
     term_freq = term_frequency(stop_w)
     return sorted(term_freq[character].items(), key = lambda x: x[1], reverse = True)
 
+#Write the term frequencies for every character to a CSV file.
+def write_to_file_tf(stop_w = False):
+    fieldnames = ["Character", "Word", "Frequency"]
+    target = r'C:\Users\heheh\Desktop\work\P-and-R-analysis\data\term_frequencies.csv'
+    target = open(target, 'w', newline='', encoding="utf-8")
+    writer = csv.DictWriter(target, fieldnames=fieldnames)
+    
+    #For each character, get their TF-IDF dictionaries and write to the file.
+    c = get_characters()
+    print(c)
+    for character in c:
+        if character == "Character":
+            continue
+        print("Writing frequencies for character: " + character)
+        term_freq = term_frequency(stop_w)[character]
+        for word in term_freq:
+            writer.writerow({"Character": character, "Word": word, "Frequency": term_freq[word]})
 
 
+#-----------------------------IDF FUNCTIONS-----------------------------------
 #Generate the inverse document frequency (IDF), as a Python dictionary, for a set of transcriptions. Specifically, for each character, this function will output
 #each word's IDF value corresponding to each character. Each "document" is defined as an episode (previously, per line, un-ideal).
 
@@ -205,21 +223,23 @@ def sorted_tf_idf_char(character, stop_w = True, r_pts = 10):
 
 
 #Write the total tf_idf scores for every character and word to file. 
-def write_to_file(stop_w = True, r_pts = 10):
+def write_to_file_tfidf(stop_w = True, r_pts = 10):
     fieldnames = ["Character", "Word", "TF-IDF"]
-    target = r'C:\Users\heheh\Desktop\work\P-and-R-analysis\tf_idf_full.csv'
-    target = open(target, 'w', newline='')
+    target = r'C:\Users\heheh\Desktop\work\P-and-R-analysis\data\tf_idf_full.csv'
+    target = open(target, 'w', newline='', encoding='utf-8')
     writer = csv.DictWriter(target, fieldnames=fieldnames)
     
     #For each character, get their TF-IDF dictionaries and write to the file.
     c = get_characters()
     print(c)
     for character in c:
+        if character == "Character":
+            continue
         print("Writing words for character: " + character)
         tf_idf = tf_idf_char(character, stop_w, r_pts)
         for word in tf_idf:
             writer.writerow({"Character": character, "Word": word, "TF-IDF": tf_idf[word]})
 
 #Create complete CSV file; comment out if you don't want it to.
-#write_to_file()
-
+#write_to_file_tfidf()
+write_to_file_tf()
