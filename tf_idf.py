@@ -242,4 +242,4 @@ def write_to_file_tfidf(stop_w = True, r_pts = 10):
 
 #Create complete CSV file; comment out if you don't want it to.
 #write_to_file_tfidf()
-write_to_file_tf()
+#write_to_file_tf()
