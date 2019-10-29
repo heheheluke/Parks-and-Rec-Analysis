@@ -241,5 +241,5 @@ def write_to_file_tfidf(stop_w = True, r_pts = 10):
             writer.writerow({"Character": character, "Word": word, "TF-IDF": tf_idf[word]})
 
 #Create complete CSV file; comment out if you don't want it to.
-#write_to_file_tfidf()
-#write_to_file_tf()
+write_to_file_tfidf()
+write_to_file_tf()
