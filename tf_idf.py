@@ -9,7 +9,7 @@ import string
 
 #-----------------------------------------------------------------------------------------
 
-#Stop words list pulled from NLTK, with some added myself (largely contractions, due to removing all punctuation, e.g. "im", "ive") 
+#Stop words list pulled from NLTK (largely contractions, due to removing all punctuation, e.g. "im", "ive") 
 stop_words = ["i", "ive", "im", "id" ,"me", "my", "myself", "we", "our", "ours", "ourselves",
 "you", "your", "yours", "youre", "yourself", "yourselves", "he", "him", "his", "himself",
 "she", "her", "hers", "herself", "ill", "it", "its", "itself", "they", "them", "their",
@@ -241,5 +241,5 @@ def write_to_file_tfidf(stop_w = True, r_pts = 10):
             writer.writerow({"Character": character, "Word": word, "TF-IDF": tf_idf[word]})
 
 #Create complete CSV file; comment out if you don't want it to.
-write_to_file_tfidf()
-write_to_file_tf()
+#write_to_file_tfidf()
+#write_to_file_tf()
