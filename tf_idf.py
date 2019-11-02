@@ -43,6 +43,13 @@ def get_characters():
             output.append(row[0])
     return output
 
+#Removes punctuation, white space (leading, trailing, and extra within), lowercase, returns the line as a list of words
+def clean_strip_line(line):
+    out = line.lower()
+    for p in string.punctuation:
+        out = out.replace(p, '')
+    return out.strip()
+
 #-------------------TF FUNCTIONS--------------------------------------------------------------
 
 #Generate the term frequencies, as a Python dictionary, in the corresponding transcription of lines in the show. Accepts a boolean for whether or not to include stop words in the final
@@ -59,11 +66,7 @@ def term_frequency(stop_w = True):
 
     for l in t_reader:
         speaker = l[0]
-        line = l[1]
-        line = line.lower()                             #Lowercase, remove whitespace, remove punctuation
-        for p in string.punctuation:
-            line = line.replace(p, '')
-        line.strip() 
+        line = clean_strip_line(l[1])
 
         if speaker == '': #Ignore lines not assigned to characters (unfinished transcription)
             continue
@@ -90,12 +93,81 @@ def term_frequency(stop_w = True):
                     continue
     return final_char
 
-
-
-#Returns a list of tuples sorted from highest to lowest of a character's spoken words. Second optional argument for whether or not to include stop words.
+#Returns a list of tuples sorted from highest to lowest of a character's spoken words. Second optional argument for whether or not to include stop words. (for debugging)
 def get_sorted_tf(character, stop_w = True):
     term_freq = term_frequency(stop_w)
     return sorted(term_freq[character].items(), key = lambda x: x[1], reverse = True)
+
+#Generate the number of episodes each character appears in.
+#e.g. {"Leslie Knope": 122, ...}
+def episode_appearance():
+    
+    t_reader = import_trans()
+    total = {}
+    season = 1
+    episode = 1
+    appearances = [] #Characters that appear in current episode
+    for l in t_reader:
+        speaker = l[0]
+        line = l[1]
+
+        #New episode
+        if "Season: " in line and "Episode: " in line:
+            for c in appearances:
+                if c in total:
+                    total[c]+=1
+                else:
+                    total[c]=1
+            season = int(line[len("Season: "): len("Season: ")+1])
+            episode = int(line[len("Season: x Episode: "):])
+            appearances = []
+        else:
+            if speaker in appearances:
+                continue
+            else:
+                appearances.append(speaker)
+    
+    #Add the last episode
+    for c in appearances:
+        if c in total:
+            total[c] += 1
+        else:
+            total[c]=1
+
+    return total
+
+
+#Generate the average number of words spoken per episode
+def average_word_by_episode(stop_w = False):
+    tf = term_frequency(stop_w)
+    eps = episode_appearance()
+
+    #Get total words for each character
+    total_words = {}
+    for character in tf.keys():
+        total_words[character] = 0
+        for word in tf[character]:
+            total_words[character] += tf[character][word]
+    
+    output = {}
+    for c in total_words:
+        print(c)
+        print(total_words[c])
+        print(eps[c])
+        output[c] = total_words[c]/eps[c]
+    
+    return output
+
+#Write average words to CSV file.
+def write_avg_word_to_file():
+    fieldnames = ["Character", "Average"]
+    target = r'C:\Users\heheh\Desktop\work\P-and-R-analysis\data\average_words_by_episode.csv'
+    target = open(target, 'w', newline='', encoding="utf-8")
+    writer = csv.DictWriter(target, fieldnames=fieldnames)
+
+    avgs = average_word_by_episode()
+    for c in avgs:
+        writer.writerow({"Character": c, "Average": avgs[c]})
 
 #Write the term frequencies for every character to a CSV file.
 def write_to_file_tf(stop_w = False):
@@ -114,7 +186,6 @@ def write_to_file_tf(stop_w = False):
         term_freq = term_frequency(stop_w)[character]
         for word in term_freq:
             writer.writerow({"Character": character, "Word": word, "Frequency": term_freq[word]})
-
 
 #-----------------------------IDF FUNCTIONS-----------------------------------
 #Generate the inverse document frequency (IDF), as a Python dictionary, for a set of transcriptions. Specifically, for each character, this function will output
