@@ -25,7 +25,7 @@ stop_words = ["i", "ive", "im", "id" ,"me", "my", "myself", "we", "our", "ours",
 
 #Import the transcriptions and returns a csv reader object. Avoids redundant code.
 def import_trans():
-    transcription = r"C:\Users\heheh\Desktop\work\P-and-R-analysis\data\p_r_scripts_final.csv"
+    transcription = r"C:\Users\heheh\Desktop\work\P-and-R-analysis\data\p_r_scripts.csv"
     f = open(transcription, 'r', encoding='Latin 1')
     t_out = csv.reader(f)
     return t_out
@@ -204,7 +204,6 @@ def idf(stop_w = True):
     for c in characters:
         for word in output[c]:
             output[c][word] = math.log(episode_number/(output[c][word]), 10) #IDF = log(N / n), where N = total number of episodes, n = episodes the word appears in.
-
     return output
 
 #Return a given character's list of words by TF * IDF weighting, sorted from highest to lowest. Optional parameter to round the numbers for readability (default 10).
