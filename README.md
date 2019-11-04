@@ -30,3 +30,5 @@ The scripts are all pulled from [Springfield! Springfield!](https://www.springfi
 3) I do realize that NLTK and scikit-learn have their own versions of TF-IDF already implemented; I just implemented my own because it seemed fun and relatively simple to do, as TF-IDF is not a particularly complicated heuristic to understand.
 
 4) Each "document" is defined as a single episode (so there are 122 possible "documents" in total). I only included a document in the computation of a character's IDF score if the character appeared in that episode (e.g. Andy was missing for the beginning of Season 6, ostensibly temporarily working in London). I don't know if this was totally right to do, so maybe someone more knowledgeable on NLP can correct me if it isn't.
+
+5) Stop words are pulled from NLTK's list of stop words, as well as some that I've added on my own (particularly contractions of stop words that are already listed, but their contraction isn't). They're listed at the top of tf_idf.py; a bit too many I feel to list in here.
