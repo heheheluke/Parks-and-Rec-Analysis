@@ -2189,7 +2189,7 @@ Leslie Knope,Yeah.,1,5
 Tom Haverford,How about this?,1,5
 Tom Haverford,"""Marlene Griggs-Knope is definitely not a whore.""",1,5
 Leslie Knope,No.,1,5
-etom,"""Marlene Griggs-Knope has not five but seven Asian friends.""",1,5
+Tom Haverford,"""Marlene Griggs-Knope has not five but seven Asian friends.""",1,5
 Tom Haverford,"""Marlene Griggs-Knope has never solicited a male prostitute.""",1,5
 Tom Haverford,"""Marlene Griggs-Knope has said the N word only four times in her entire life.""",1,5
 Leslie Knope,No!,1,5
@@ -6439,8 +6439,8 @@ Nurse,We look out for her.,2,7
 Mark Brendanawicz,"So, you kind of dropped the ball with Andy then, didn't you?",2,7
 Nurse,Aw!,2,7
 Nurse,Andy.,2,7
-nurse,I loved Andy.,2,7
-nurse,"Ah, such a sweetheart.",2,7
+Nurse,I loved Andy.,2,7
+Nurse,"Ah, such a sweetheart.",2,7
 Nurse,Is Andy coming tonight?,2,7
 Nurse,You should get back with Andy.,2,7
 Ann Perkins,Who needs a drink?,2,7
@@ -12691,7 +12691,7 @@ Ron Swanson,Can you sign off on my plans now?,2,18
 Mark Brendanawicz,Did you get everything up to code?,2,18
 Ron Swanson,Yup.,2,18
 Mark Brendanawicz,"No, you didn't!",2,18
-mr,You clearly didn't!,2,18
+Mark Brendanawicz,You clearly didn't!,2,18
 Ron Swanson,"It's my property, my land, my shop.",2,18
 Tom Haverford,Ooh.,2,18
 Tom Haverford,Tommy needs a banana.,2,18
@@ -21454,19 +21454,19 @@ Extra,"You two remind me of me and my husband, George.",3,9
 Tom Haverford,I gotta nail the speech.,3,9
 Tom Haverford,So I brought in an expert.,3,9
 Tom Haverford,Jean-Ralphio.,3,9
-Jean-Ralphio,"Can I throw something on you, see if it feels good?",3,9
+Jean-Ralphio Saperstein,"Can I throw something on you, see if it feels good?",3,9
 Tom Haverford,Sure.,3,9
-Jean-Ralphio,"Okay, this is what I would do.",3,9
-Jean-Ralphio,I would start with a joke.,3,9
-Jean-Ralphio,"Joke, Vince Vaughn quote, obviously.",3,9
+Jean-Ralphio Saperstein,"Okay, this is what I would do.",3,9
+Jean-Ralphio Saperstein,I would start with a joke.,3,9
+Jean-Ralphio Saperstein,"Joke, Vince Vaughn quote, obviously.",3,9
 Tom Haverford,Swingers or Crashers?,3,9
-Jean-Ralphio,Fred Claus.,3,9
-Jean-Ralphio,Talk about Andy's ex-girlfriends.,3,9
-Jean-Ralphio,Quote from Love Actually.,3,9
-Jean-Ralphio,Hold back your tears.,3,9
-Jean-Ralphio,Pause.,3,9
-Jean-Ralphio,Drop the microphone.,3,9
-Jean-Ralphio,Get out of that bitch.,3,9
+Jean-Ralphio Saperstein,Fred Claus.,3,9
+Jean-Ralphio Saperstein,Talk about Andy's ex-girlfriends.,3,9
+Jean-Ralphio Saperstein,Quote from Love Actually.,3,9
+Jean-Ralphio Saperstein,Hold back your tears.,3,9
+Jean-Ralphio Saperstein,Pause.,3,9
+Jean-Ralphio Saperstein,Drop the microphone.,3,9
+Jean-Ralphio Saperstein,Get out of that bitch.,3,9
 Extra,"I wish you the best of luck, to both of you.",3,9
 Andy Dwyer,"Thank you, Grandma.",3,9
 Andy Dwyer,How could anyone ever possibly top that?,3,9
@@ -23458,23 +23458,23 @@ Tom Haverford,I think it's going okay.,3,13
 Tom Haverford,"People better buy this stuff, or else I'm gonna be screwed.",3,13
 Leslie Knope,It's gonna be fine.,3,13
 Leslie Knope,People will definitely buy it.,3,13
-Jean-Ralphio,"Uhoh, uhoh.",3,13
-Jean-Ralphio,"""K"" to the ""N"" to the ""OPE,"" she's the dopest little shorty in all Pawnee, Indiana.",3,13
+Jean-Ralphio Saperstein,"Uhoh, uhoh.",3,13
+Jean-Ralphio Saperstein,"""K"" to the ""N"" to the ""OPE,"" she's the dopest little shorty in all Pawnee, Indiana.",3,13
 Tom Haverford,"Why didn't you just stop at ""Pawnee""?",3,13
-Jean-Ralphio,"Leslie Knope, seriously, you get sexier every day.",3,13
-Jean-Ralphio,And that is not a line.,3,13
-Jean-Ralphio,That is for real.,3,13
+Jean-Ralphio Saperstein,"Leslie Knope, seriously, you get sexier every day.",3,13
+Jean-Ralphio Saperstein,And that is not a line.,3,13
+Jean-Ralphio Saperstein,That is for real.,3,13
 Leslie Knope,"Oh, JeanRalphio.",3,13
 Leslie Knope,So you're helping Tom.,3,13
-Jean-Ralphio,"Absolutely, and it's time to get that paper.",3,13
+Jean-Ralphio Saperstein,"Absolutely, and it's time to get that paper.",3,13
 Tom Haverford,Get get get get get get that paper.,3,13
-Jean-Ralphio,Get get get get get get that paper.,3,13
-Jean-Ralphio,"Snake juice sales are going to be off the chorts, why, because that shiz is straight up deloicious.",3,13
+Jean-Ralphio Saperstein,Get get get get get get that paper.,3,13
+Jean-Ralphio Saperstein,"Snake juice sales are going to be off the chorts, why, because that shiz is straight up deloicious.",3,13
 Leslie Knope,"Well, I know tonight's gonna be a big success, and I wish I could stay.",3,13
 Leslie Knope,"I really do, but I have to go help Ann.",3,13
 Leslie Knope,She's gonna be up all night cramming for a big job interview.,3,13
 Tom Haverford,"She might be up all night, but I think someone else is gonna be doing the cramming.",3,13
-Jean-Ralphio,Uhoh!,3,13
+Jean-Ralphio Saperstein,Uhoh!,3,13
 Ann Perkins,Hey.,3,13
 Leslie Knope,Hey.,3,13
 Ann Perkins,I'm so happy to see you.,3,13
@@ -23513,16 +23513,16 @@ Andy Dwyer,"I got to admit, I thought your costume would maybe be a little bit s
 April Ludgate,How dare you?,3,13
 Andy Dwyer,Nice.,3,13
 Ron Swanson,Gentlemen.,3,13
-Jean-Ralphio,Swan song.,3,13
-Jean-Ralphio,How you living?,3,13
+Jean-Ralphio Saperstein,Swan song.,3,13
+Jean-Ralphio Saperstein,How you living?,3,13
 Ron Swanson,Yes.,3,13
 Tom Haverford,Why aren't you holding a Snake Juice?,3,13
 Ron Swanson,I'm more of a whiskey man.,3,13
-Jean-Ralphio,"RonRon, come here.",3,13
-Jean-Ralphio,Come here for a bit.,3,13
-Jean-Ralphio,You're good right there.,3,13
-Jean-Ralphio,"Listen, you got to jump on the Tommy Town Express.",3,13
-Jean-Ralphio,This guy has some of the best investment ideas I've ever heard in my life.,3,13
+Jean-Ralphio Saperstein,"RonRon, come here.",3,13
+Jean-Ralphio Saperstein,Come here for a bit.,3,13
+Jean-Ralphio Saperstein,You're good right there.,3,13
+Jean-Ralphio Saperstein,"Listen, you got to jump on the Tommy Town Express.",3,13
+Jean-Ralphio Saperstein,This guy has some of the best investment ideas I've ever heard in my life.,3,13
 Tom Haverford,Make a baby tuxedo clothing line.,3,13
 Tom Haverford,A department store with a guest list.,3,13
 Tom Haverford,White fur ear muffs for men.,3,13
@@ -23538,14 +23538,14 @@ Tom Haverford,"If you like it, you got to talk it up all night.",3,13
 Tom Haverford,"If you don't, I'll shave JeanRalphio's head.",3,13
 Ron Swanson,"Yeah, I'd like to see that.",3,13
 Ron Swanson,Hit me.,3,13
-Jean-Ralphio,A lot riding on this.,3,13
+Jean-Ralphio Saperstein,A lot riding on this.,3,13
 Ron Swanson,"Damn, if that isn't delicious.",3,13
-Jean-Ralphio,"""R"" to the ""O"" to the ""N"" I say Swanson's got swagger the size of a Big Ben clock",3,13
+Jean-Ralphio Saperstein,"""R"" to the ""O"" to the ""N"" I say Swanson's got swagger the size of a Big Ben clock",3,13
 Tom Haverford,"Dude, you got to end it on the rhyme.",3,13
-Jean-Ralphio,I know what I have to do.,3,13
+Jean-Ralphio Saperstein,I know what I have to do.,3,13
 Tom Haverford,"You had it at ""Ben.""",3,13
-Jean-Ralphio,I know.,3,13
-Jean-Ralphio,I got it.,3,13
+Jean-Ralphio Saperstein,I know.,3,13
+Jean-Ralphio Saperstein,I got it.,3,13
 April Ludgate,You think I haven't been around the world?,3,13
 April Ludgate,"I've been everywhere, darling.",3,13
 April Ludgate,I'm a very wealthy woman.,3,13
@@ -23615,12 +23615,12 @@ Tom Haverford,It won't happen again.,3,13
 Chris Traeger,I just don't see any way around it.,3,13
 Chris Traeger,You're gonna have to sell your shares in the Snakehole.,3,13
 Tom Haverford,No!,3,13
-Jean-Ralphio,"TPain, this guy bothering you?",3,13
+Jean-Ralphio Saperstein,"TPain, this guy bothering you?",3,13
 Tom Haverford,This is my boss.,3,13
-Jean-Ralphio,"Okay, yeah.",3,13
-Jean-Ralphio,You want me to write a rap about your name?,3,13
+Jean-Ralphio Saperstein,"Okay, yeah.",3,13
+Jean-Ralphio Saperstein,You want me to write a rap about your name?,3,13
 Chris Traeger,Yes.,3,13
-Jean-Ralphio,"""B"" to the ""O"" to the double ""S,"" do what he say, and you'll be successful",3,13
+Jean-Ralphio Saperstein,"""B"" to the ""O"" to the double ""S,"" do what he say, and you'll be successful",3,13
 Ann Perkins,"No offense, but maybe you think I'm going too fast 'cause you're going too slow with Ben.",3,13
 Leslie Knope,"No offense, but I'm going slow because I might lose my job.",3,13
 Ann Perkins,"Okay, no offense, but maybe that's a little bit of an excuse for not acting on your feelings.",3,13
@@ -23637,9 +23637,9 @@ Leslie Knope,"Go get me another ""Snork Juice.""",3,13
 Ben Wyatt,"Oh, that's maybe not the best idea for you.",3,13
 Leslie Knope,Forget it.,3,13
 Leslie Knope,Jean-Ralphio!,3,13
-Jean-Ralphio,"Yes, I'm here.",3,13
+Jean-Ralphio Saperstein,"Yes, I'm here.",3,13
 Leslie Knope,Dance up on me.,3,13
-Jean-Ralphio,"Yes, yes, yes.",3,13
+Jean-Ralphio Saperstein,"Yes, yes, yes.",3,13
 Andy Dwyer,How's it going with her?,3,13
 Ben Wyatt,"Well nothing's going at all really, I don't know.",3,13
 Ben Wyatt,"I feel like I just did something wrong, she just doesn't seem to want to talk with me.",3,13
@@ -23753,7 +23753,7 @@ Andy Dwyer,"Shut up, Kyle.",3,13
 Andy Dwyer,I know you boosted those paintings.,3,13
 April Ludgate,"Maybe it was me, but I'll never tell you where they are.",3,13
 April Ludgate,And you'll never have my body either.,3,13
-Jean-Ralphio,"T, you don't have to worry about a thing, because I'm gonna keep those shares real tight for you, real nice and cozy like.",3,13
+Jean-Ralphio Saperstein,"T, you don't have to worry about a thing, because I'm gonna keep those shares real tight for you, real nice and cozy like.",3,13
 Donna Meagle,"Sorry to hear the news, Tom.",3,13
 Donna Meagle,We're gonna miss you around the club.,3,13
 Tom Haverford,"Hey, you own shares, too.",3,13
@@ -23761,18 +23761,18 @@ Tom Haverford,Why didn't Chris make you sell?,3,13
 Donna Meagle,'Cause Chris doesn't know.,3,13
 Donna Meagle,You know what?,3,13
 Donna Meagle,Snitches get stitches.,3,13
-Jean-Ralphio,"Donna, come on.",3,13
+Jean-Ralphio Saperstein,"Donna, come on.",3,13
 Donna Meagle,Don't.,3,13
 Tom Haverford,I'm a natural moneymaker.,3,13
 Tom Haverford,I got into government for the connections.,3,13
 Tom Haverford,This was supposed to be a thing that led to the other thing.,3,13
 Tom Haverford,It's like when Vin did Boiler Room.,3,13
 Tom Haverford,That's what led to him being xXx and doing Furious.,3,13
-Jean-Ralphio,And Furious.,3,13
-Jean-Ralphio,"Yeah, I know.",3,13
-Jean-Ralphio,"Listen, I don't like all this negativity, man.",3,13
-Jean-Ralphio,"Why don't you turn that ""frizzown"" ""upsidedizzity.""",3,13
-Jean-Ralphio,Huh?,3,13
+Jean-Ralphio Saperstein,And Furious.,3,13
+Jean-Ralphio Saperstein,"Yeah, I know.",3,13
+Jean-Ralphio Saperstein,"Listen, I don't like all this negativity, man.",3,13
+Jean-Ralphio Saperstein,"Why don't you turn that ""frizzown"" ""upsidedizzity.""",3,13
+Jean-Ralphio Saperstein,Huh?,3,13
 Tom Haverford,"This sucks, man.",3,13
 Ben Wyatt,You're wearing snow pants.,3,13
 Ann Perkins,"I got home last night, and I thought I might go sledding.",3,13
@@ -28616,7 +28616,7 @@ Lucy,It's nice to see you.,4,6
 Tom Haverford,"Yeah, good to see you too.",4,6
 Lucy,Want to go dance?,4,6
 Tom Haverford,"Yeah, yeah! Uh, give me a minute.",4,6
-lucy,Okay.,4,6
+Lucy,Okay.,4,6
 Tom Haverford,I can't believe you called her for me.,4,6
 Tom Haverford,"That's really nice of you, man, for real.",4,6
 Tom Haverford,Thanks.,4,6
@@ -35999,16 +35999,16 @@ Andy Dwyer,Let's do this again.,4,21
 Tom Haverford,"Hey, Bill!",4,21
 Tom Haverford,Tom Haverford from the Knope campaign.,4,21
 Bill,"And you brought the whole posse with you, huh?",4,21
-BIll,I'm not changing my mind.,4,21
+Bill,I'm not changing my mind.,4,21
 Ron Swanson,"We already paid for those vans, Mr. Butler.",4,21
 Ron Swanson,$900 for one day.,4,21
 Bill,"Yeah, it was $900, but now it's $10,000.",4,21
 Donna Meagle,Excuse me?,4,21
 Bill,The Newport campaign offered me 10 grand to just rent the vans and park them somewhere.,4,21
-BIll,"So I'm going to tear up your contract, and I'm going to take the money.",4,21
+Bill,"So I'm going to tear up your contract, and I'm going to take the money.",4,21
 Bill,Anything else?,4,21
 Bill,No?,4,21
-BIll,Great.,4,21
+Bill,Great.,4,21
 Donna Meagle,"Well, what now?",4,21
 Tom Haverford,He's just playing hardball.,4,21
 Tom Haverford,Let me tell you how it's gonna go down.,4,21
@@ -36085,7 +36085,7 @@ Donna Meagle,Which is you all pressed up on some chick with huge cans.,4,21
 Bill,Yeah.,4,21
 Bill,It was a hell of a day.,4,21
 Bill,People need to know about it.,4,21
-BIll,And I don't need free publicity.,4,21
+Bill,And I don't need free publicity.,4,21
 Bill,I can just pay for it.,4,21
 Bill,"With my $10,000.",4,21
 Tom Haverford,"Look, I ain't gonna try to play a player.",4,21
@@ -36141,17 +36141,17 @@ Leslie Knope,A man is dead.,4,21
 Ron Swanson,"Look, friend, I respect your slavish devotion to the free market, but you can't welch on a contract.",4,21
 Ron Swanson,"Where I come from, a man's word is sacred.",4,21
 Bill,"Okay, what's your stance on pinky swears, George Washington?",4,21
-BIll,I'm taking the money.,4,21
+Bill,I'm taking the money.,4,21
 Ron Swanson,Fine.,4,21
 Ron Swanson,I'll match it.,4,21
 Ron Swanson,"I'll give you $10,000 for the vans.",4,21
 Ron Swanson,Deal?,4,21
-BIll,No.,4,21
-BIll,Price has gone up.,4,21
-BIll,"Now it's $12,000.",4,21
+Bill,No.,4,21
+Bill,Price has gone up.,4,21
+Bill,"Now it's $12,000.",4,21
 Ron Swanson,What?,4,21
 Ron Swanson,Why?,4,21
-BIll,"Look, I own a fleet of 22 crappy white vans, and for some reason there's a massive bidding war going on over them.",4,21
+Bill,"Look, I own a fleet of 22 crappy white vans, and for some reason there's a massive bidding war going on over them.",4,21
 Bill,"Now for a guy whose only assets are 22 crappy white vans, it's pretty much a dream scenario, so I'm just going to ride this out, see where it takes me.",4,21
 Bill,"And now it's 15,000.",4,21
 Ben Wyatt,"Okay, I talked Newport's people into giving us ten minutes alone with Bobby, so we get in there, we apologize, and then we get back on the campaign trail.",4,21
@@ -36289,12 +36289,12 @@ Tom Haverford,Am I dead?,4,21
 Bill,What the hell?,4,21
 Donna Meagle,"Exactly, Bill.",4,21
 Donna Meagle,What the hell? You just rear-ended me.,4,21
-BIll,That is not what happened.,4,21
+Bill,That is not what happened.,4,21
 Donna Meagle,But I got witnesses.,4,21
 Tom Haverford,Yeah.,4,21
 Tom Haverford,"It went down exactly the way my girl said it did, you mean, bald man.",4,21
 Bill,"Hey, what about you, Mr.",4,21
-BIll,"""A man's word is sacred""?",4,21
+Bill,"""A man's word is sacred""?",4,21
 Ron Swanson,"Well, it is, but you're an ass [Bleep].",4,21
 Donna Meagle,So we can settle this now.,4,21
 Donna Meagle,I will accept payment in van rentals.,4,21
@@ -39628,12 +39628,12 @@ Tom Haverford,You clean it.,5,6
 Tom Haverford,You return it.,5,6
 Tom Haverford,I get rich.,5,6
 Tom Haverford,Wink!,5,6
-Jean Ralphio Saperstein,Rent A Swag!,5,6
-Jean Ralphio Saperstein,Where your swag is my business!,5,6
+Jean-Ralphio Saperstein,Rent A Swag!,5,6
+Jean-Ralphio Saperstein,Where your swag is my business!,5,6
 April Ludgate,"Okay, stop.",5,6
 April Ludgate,"You guys, stop!",5,6
 April Ludgate,Stop!,5,6
-Jean Ralphio Saperstein,And your business is my swag,5,6
+Jean-Ralphio Saperstein,And your business is my swag,5,6
 April Ludgate,"Stop, stop, stop, stop, stop, stop, stop, stop!",5,6
 Tom Haverford,"Yeah, yeah, yeah.",5,6
 April Ludgate,Please.,5,6
