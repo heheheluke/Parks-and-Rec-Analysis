@@ -6,6 +6,7 @@ import sys
 import re
 import math
 import string
+import pandas as pd
 
 #-----------------------------------------------------------------------------------------
 
@@ -133,9 +134,7 @@ def episode_appearance():
             total[c] += 1
         else:
             total[c]=1
-
     return total
-
 
 #Generate the average number of words spoken per episode
 def average_word_by_episode(stop_w = False):
@@ -157,6 +156,51 @@ def average_word_by_episode(stop_w = False):
         output[c] = total_words[c]/eps[c]
     
     return output
+
+#Returns a DataFrame containing total number of words spoken by each character, by season; x is season, y is character
+def term_frequencies_by_season(stop_w = False):
+
+    t_reader = import_trans()
+
+    output = pd.DataFrame()
+    temp = []
+    for c in get_characters():
+        temp.append({"Character": c, '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0})
+    temp = pd.DataFrame(temp)
+    output = output.append(temp)
+    output.set_index('Character', inplace=True)
+
+    current_season = 1
+    season_totals = {}
+    for l in t_reader:
+        speaker = l[0]
+        line = clean_strip_line(l[1]).split()
+        season = l[2]
+
+        if speaker == '' or speaker == 'Character':
+            continue
+        #New season, add season_totals to the corresponding entry in output, reset
+        if (int(season) is not current_season):
+            for c in season_totals.keys(): #Add each character
+                output.at[c, str(current_season)] = season_totals[c]
+            current_season += 1
+            season_totals = {}
+
+        if speaker in season_totals:
+            season_totals[speaker] = season_totals[speaker] + len(line)
+        else:
+            season_totals[speaker] = len(line)
+    
+    #Handle final season 7
+    for c in season_totals.keys(): #Add each character      
+        output.at[c, str(current_season)] = season_totals[c]
+
+    return output
+
+#Writes term frequency by season to file.
+def write_term_frequencies_by_season():
+    tfbs = term_frequencies_by_season()
+    tfbs.to_csv('term_frequencies_by_season.csv', encoding='latin1', index=True)
 
 #Write average words to CSV file.
 def write_avg_word_to_file():
