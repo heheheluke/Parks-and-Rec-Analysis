@@ -200,7 +200,7 @@ def term_frequencies_by_season(stop_w = False):
 #Writes term frequency by season to file.
 def write_term_frequencies_by_season():
     tfbs = term_frequencies_by_season()
-    tfbs.to_csv('term_frequencies_by_season.csv', encoding='latin1', index=True)
+    tfbs.to_csv(r'C:\Users\heheh\Desktop\work\P-and-R-analysis\data\term_frequencies_by_season.csv', encoding='latin1', index=True)
 
 #Write average words to CSV file.
 def write_avg_word_to_file():
@@ -355,5 +355,7 @@ def write_to_file_tfidf(stop_w = True, r_pts = 10):
             writer.writerow({"Character": character, "Word": word, "TF-IDF": tf_idf[word]})
 
 #Create complete CSV file; comment out if you don't want it to.
-#write_to_file_tfidf()
-#write_to_file_tf()
+write_to_file_tfidf()
+write_to_file_tf()
+write_term_frequencies_by_season()
+write_avg_word_to_file()

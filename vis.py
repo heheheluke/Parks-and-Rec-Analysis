@@ -15,10 +15,6 @@ def rand_colors(n):
 
 prop = fm.FontProperties(fname=r'C:\Users\heheh\Anaconda3\pkgs\matplotlib-3.1.1-py37hc8f65d3_0\Lib\site-packages\matplotlib\mpl-data\fonts\ttf\OpenSansCondensed-Light.ttf')
 
-#Read in
-colnames = ['Character', 'Word', 'TF-IDF']
-tfidf_data = pd.read_csv(r"data\tf_idf_full.csv", names=colnames, encoding='latin1')
-
 colnames = ['Character', 'Word', 'Frequency']
 freq_data = pd.read_csv(r"data\term_frequencies.csv", names=colnames, encoding='latin1')
 
@@ -47,8 +43,12 @@ colors = [
     '#BA3CAF', #Jerry
     '#391C77'] #Donna
 
+#Plot TF-IDF values
 def plot_tf_idf():
-    #Plots for TF-IDF values
+    #Read in
+    colnames = ['Character', 'Word', 'TF-IDF']
+    tfidf_data = pd.read_csv(r"data\tf_idf_full.csv", names=colnames, encoding='latin1')
+
     c = 0
     plt.rcParams["figure.figsize"] = [14,2]
 

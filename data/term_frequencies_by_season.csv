@@ -1,12 +1,13 @@
 Character,1,2,3,4,5,6,7
+Character,0,0,0,0,0,0,0
 Leslie Knope,8375,27233,15049,21034,19582,20550,12138
 Child,9,4,0,0,0,0,0
 Extra,619,803,1134,2106,3251,1651,847
 Drunk,14,0,0,0,0,0,0
 Ron Swanson,1110,6765,4501,5752,5736,6300,4415
-Tom Haverford,2209,8395,6356,6766,6643,7147,3388
+Tom Haverford,2218,8395,6356,6766,6643,7147,3388
 Ann Perkins,1956,5985,3823,4290,5777,3326,60
-Mark Brendanawicz,1578,3401,0,0,0,0,0
+Mark Brendanawicz,1578,3404,0,0,0,0,0
 Andy Dwyer,1268,6600,4721,5574,5451,4701,3993
 April Ludgate,222,3368,2500,3503,4211,4957,3513
 Marlene Griggs-Knope,365,163,160,80,97,0,0
@@ -18,7 +19,6 @@ Shauna Malwae-Tweep,442,166,98,98,259,163,4
 Donna Meagle,24,601,818,1078,1188,2540,1998
 Brian,3,14,0,0,0,0,0
 All,2,59,0,23,0,40,27
-etom,9,0,0,0,0,0,0
 Salvatore,34,0,0,0,0,0,0
 Frank Schnable,43,0,0,0,0,0,0
 Janine Restrepo,65,0,0,0,0,0,0
@@ -59,8 +59,7 @@ Construction Worker,0,4,0,0,0,0,0
 Scott Braddock,0,159,0,0,0,0,0
 Wendell Adams,0,22,0,0,0,0,0
 Greg Pikitis,0,187,0,0,0,11,0
-Nurse,0,82,0,12,0,0,0
-nurse,0,7,0,0,0,0,0
+Nurse,0,89,0,12,0,0,0
 Greg's Mom,0,154,0,0,0,0,0
 Old Gus,0,94,0,0,0,0,0
 Tammy 2,0,421,289,111,244,58,199
@@ -80,7 +79,7 @@ George MacFayden,0,21,0,0,0,0,0
 Justin,0,1061,0,0,0,0,0
 Chris,0,677,0,0,0,0,0
 Zack,0,5,0,0,0,0,0
-Jean-Ralphio Saperstein,0,470,304,809,503,616,267
+Jean-Ralphio Saperstein,0,470,592,809,518,616,267
 Tania,0,76,0,0,0,0,0
 Chef,0,28,0,0,0,0,0
 Maria Portlesman,0,47,0,0,0,0,0
@@ -107,7 +106,6 @@ Evelyn Rowshlind,0,279,0,0,0,0,0
 Eugene,0,19,0,0,0,0,0
 Brett,0,20,17,0,184,0,58
 Harris,0,16,41,17,185,2,57
-mr,0,3,0,0,0,0,0
 Joe Campopiano,0,25,0,0,0,0,0
 Mike,0,17,0,0,0,0,0
 TV,0,21,0,0,0,0,0
@@ -127,7 +125,7 @@ Martin Housely,0,49,0,0,0,0,0
 Denise Yermley,0,13,0,0,0,0,0
 Chris Traeger,0,771,4323,5885,5286,3376,80
 Ben Wyatt,0,734,4950,7505,7038,8440,4128
-Lucy,0,158,99,68,0,0,496
+Lucy,0,158,99,69,0,0,496
 Freddy Spaghetti,0,68,0,0,0,0,0
 Florence,0,25,0,0,0,0,0
 Kids,0,7,0,0,0,0,0
@@ -149,7 +147,6 @@ Tanya,0,0,29,11,0,0,0
 Ken Hotate,0,0,210,0,206,0,137
 Ed,0,0,11,0,0,31,32
 Elsa Clack,0,0,49,0,0,0,0
-Jean-Ralphio,0,0,288,0,0,0,0
 Orin,0,0,4,0,23,33,0
 Extras,0,0,2,5,0,0,46
 Brandi Maxxxx,0,0,90,108,149,0,67
@@ -176,7 +173,6 @@ Abigail,0,0,0,22,0,0,0
 Casey,0,0,0,12,0,0,0
 Martin Kernston,0,0,0,58,0,0,0
 Herb Scaifer,0,0,0,289,0,0,0
-lucy,0,0,0,1,0,0,0
 Allison,0,0,0,135,0,191,0
 extra,0,0,0,50,0,0,0
 Linda Lonegan,0,0,0,238,0,0,0
@@ -190,8 +186,7 @@ Buddy Wood,0,0,0,388,0,0,0
 Councilman Houser,0,0,0,65,0,0,0
 Fester Trim,0,0,0,102,0,0,0
 Manrico Della Rossa,0,0,0,45,0,0,32
-Bill,0,0,0,139,0,0,0
-BIll,0,0,0,72,0,0,0
+Bill,0,0,0,211,0,0,0
 Barbara Boxer,0,0,0,0,15,0,35
 Olympia Snow,0,0,0,0,10,0,0
 John McCain,0,0,0,0,28,0,34
@@ -206,7 +201,6 @@ Congressman Murray,0,0,0,0,82,0,0
 Marshall Langman,0,0,0,0,220,0,7
 Morris,0,0,0,0,88,59,31
 Herman,0,0,0,0,154,103,31
-Jean Ralphio Saperstein,0,0,0,0,15,0,0
 Julia Wyatt,0,0,0,0,128,0,0
 Steve Wyatt,0,0,0,0,133,0,0
 Ulani,0,0,0,0,56,0,0
