@@ -31,18 +31,19 @@ characters = [
     "Jerry Gergich",
     "Donna Meagle"]
 
-colors = [
-    '#F9F871', #Leslie
-    '#B0A8B9', #Ben
-    '#FF9671', #Tom
-    '#936C00', #Ron
-    '#4B4453', #April
-    '#008B74', #Andy
-    '#FF8066', #Chris
-    '#3D8AA4', #Ann
-    '#BA3CAF', #Jerry
-    '#391C77'] #Donna
-
+character_colors = {
+    "Leslie Knope":  '#F9F871',
+    "Ben Wyatt":     '#B0A8B9',
+    "Tom Haverford": '#FF9671',
+    "Ron Swanson":   '#936C00',
+    "April Ludgate": '#4B4453',
+    "Andy Dwyer":   '#008B74',
+    "Chris Traeger": '#FF8066',
+    "Ann Perkins":   '#3D8AA4',
+    "Jerry Gergich": '#BA3CAF',
+    "Donna Meagle":  '#391C77'
+    }
+    
 #Plot TF-IDF values
 def plot_tf_idf():
     #Read in
@@ -94,7 +95,7 @@ def bar_plot_avg_words():
         char_row = [x/episode_count[se] for se, x in enumerate(char_row)]
 
         season = np.arange(1,8)
-        ax.bar(x=season+curr_width, height=char_row, width=width, label=c, color=colors[i])
+        ax.bar(x=season+curr_width, height=char_row, width=width, label=c, color=character_colors[c])
         curr_width += width
     
     #Styling
