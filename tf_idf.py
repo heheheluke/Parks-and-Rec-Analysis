@@ -10,9 +10,9 @@ import pandas as pd
 
 #-----------------------------------------------------------------------------------------
 
-#Stop words list pulled from NLTK (largely contractions, due to removing all punctuation, e.g. "im", "ive") 
+#Stop words list pulled from NLTK, some added myself (largely contractions, due to removing all punctuation, e.g. "im", "ive") 
 stop_words = ["i", "ive", "im", "id" ,"me", "my", "myself", "we", "our", "ours", "ourselves",
-"you", "your", "yours", "youre", "yourself", "yourselves", "he", "him", "his", "himself",
+"you", "your", "yours", "youre", "yourself", "yourselves", "he", "hes", "him", "his", "himself",
 "she", "her", "hers", "herself", "ill", "it", "its", "itself", "they", "them", "their",
 "theirs", "themselves", "what", "which", "who", "whom", "this", "that", "these", "those",
 "am", "is", "are", "was", "were", "be", "been", "being", "have", "has", "had", 
@@ -22,7 +22,8 @@ stop_words = ["i", "ive", "im", "id" ,"me", "my", "myself", "we", "our", "ours",
 "up", "down", "in", "out", "on", "off", "over", "under", "again", "further", "then", "once", 
 "here", "there", "when", "where", "why", "how", "all", "any", "both", "each", "few", "more", 
 "most", "other", "some", "such", "no", "nor", "not", "only", "own", "same", "so", "than",
-"too", "very", "s", "t", "can", "will", "just", "don", "should", "now", "oh"]
+"too", "very", "s", "t", "can", "will", "just", "dont", "should", "now", "oh", "get", 
+"got", "going", "go", "thats", "dont"]
 
 #Import the transcriptions and returns a csv reader object. Avoids redundant code.
 def import_trans():
@@ -355,7 +356,7 @@ def write_to_file_tfidf(stop_w = True, r_pts = 10):
             writer.writerow({"Character": character, "Word": word, "TF-IDF": tf_idf[word]})
 
 #Create complete CSV file; comment out if you don't want it to.
-write_to_file_tfidf()
-write_to_file_tf()
-write_term_frequencies_by_season()
-write_avg_word_to_file()
+#write_to_file_tfidf()
+#write_to_file_tf()
+#write_term_frequencies_by_season()
+#write_avg_word_to_file()
