@@ -1,5 +1,5 @@
 #Process the final term frequency data.
-
+import matplotlib
 from matplotlib import pyplot as plt
 from matplotlib import font_manager as fm
 import pandas as pd
@@ -43,7 +43,9 @@ character_colors = {
     "Jerry Gergich": '#BA3CAF',
     "Donna Meagle":  '#391C77'
     }
-    
+
+cmap = matplotlib.cm.get_cmap('tab10')
+
 #Plot TF-IDF values
 def plot_tf_idf():
     #Read in
@@ -61,10 +63,10 @@ def plot_tf_idf():
             top = d.nlargest(15, 'TF-IDF')
             min = top["TF-IDF"].min()
             max = top["TF-IDF"].max()
-            p = top.plot(x='Word', y='TF-IDF', kind='barh', ax = col, width=.7)
+            p = top.plot(x='Word', y='TF-IDF', kind='barh', ax = col, width=.7, color=cmap(c/10))
             
             #Subplot attributes
-            p.set_title(characters[c], fontproperties=prop, fontsize = 12)
+            p.set_title(characters[c], fontsize = 12)
             p.get_legend().remove()
             p.tick_params(axis='y', labelsize = '8')
             p.tick_params(axis='x', labelsize='6')
@@ -74,7 +76,7 @@ def plot_tf_idf():
 
             c+=1 #Next character
 
-    fig.suptitle("Every character's most important words (using TF-IDF weighting)", fontproperties=prop, fontsize=18)
+    fig.suptitle("Every character's most significant words (TF-IDF)", fontsize=18)
     plt.tight_layout(pad=0, w_pad=-1)
 
 #Plot total words spoken by each character per episode, by season
@@ -95,18 +97,18 @@ def bar_plot_avg_words():
         char_row = [x/episode_count[se] for se, x in enumerate(char_row)]
 
         season = np.arange(1,8)
-        ax.bar(x=season+curr_width, height=char_row, width=width, label=c, color=character_colors[c])
+        ax.bar(x=season+curr_width, height=char_row, width=width, label=c, color=cmap(i/10))
         curr_width += width
     
     #Styling
-    ax.legend()
+    ax.legend(loc='lower center', bbox_to_anchor=(.5, -.11), ncol=10, fancybox=10, shadow=10)
     ax.set_xlim(.5, 7.5)
     ax.set_xticks([1,2,3,4,5,6,7], minor=False)
     ax.set_xticks([1.5,2.5,3.5,4.5,5.5,6.5], minor=True)
     ax.xaxis.grid(True, which='minor')
-    ax.set_xlabel('Season', fontproperties=prop, fontsize=12)
-    ax.set_ylabel('Word Count', fontproperties=prop, fontsize=12)
-    fig.suptitle('Main Character Word Count By Season', fontsize=20)
+    ax.set_xlabel('Season', fontsize=12)
+    ax.set_ylabel('Word Count', fontsize=12)
+    fig.suptitle('Average words per episode, by season', fontsize=20)
 
 #Generate charts
 plot_tf_idf()
