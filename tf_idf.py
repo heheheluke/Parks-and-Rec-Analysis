@@ -355,8 +355,9 @@ def write_to_file_tfidf(stop_w = True, r_pts = 10):
         for word in tf_idf:
             writer.writerow({"Character": character, "Word": word, "TF-IDF": tf_idf[word]})
 
-#Create complete CSV file; comment out if you don't want it to.
-#write_to_file_tfidf()
-#write_to_file_tf()
-#write_term_frequencies_by_season()
-#write_avg_word_to_file()
+#Create complete CSV files
+def write_files():
+    write_to_file_tfidf()
+    write_to_file_tf()
+    write_term_frequencies_by_season()
+    write_avg_word_to_file()
