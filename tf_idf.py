@@ -23,7 +23,7 @@ stop_words = ["i", "ive", "im", "id" ,"me", "my", "myself", "we", "our", "ours",
 "here", "there", "when", "where", "why", "how", "all", "any", "both", "each", "few", "more", 
 "most", "other", "some", "such", "no", "nor", "not", "only", "own", "same", "so", "than",
 "too", "very", "s", "t", "can", "will", "just", "dont", "should", "now", "oh", "get", 
-"got", "going", "go", "thats", "dont"]
+"got", "going", "go", "thats", "dont", "gonna"]
 
 #Import the transcriptions and returns a csv reader object. Avoids redundant code.
 def import_trans():
