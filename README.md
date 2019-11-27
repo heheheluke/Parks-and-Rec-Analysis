@@ -1,6 +1,6 @@
 # Analysis of the characters of the television show "Parks and Recreation"
 
-A personal project to analyze the main characters on Parks and Recreation, based on a variety of metrics: words spoken by each character per season, average number of words per episode, most "important" words for each character based on the TF-IDF weighting. (List subject to change). Transcription was done on Excel, analysis with Python using pandas and visualization using matplotlib.
+A personal project to analyze the main characters on Parks and Recreation, based on a variety of metrics: words spoken by each character per season, average number of words per episode, most "important" words for each character based on the TF-IDF weighting. A program for predicting which character is mostly likely to say a line is also included. Transcription was done on Excel, analysis with Python using pandas and visualization using matplotlib. Prediction program was dont in Python using NLTK and scikit-learn.
 
 The idea was inspired by [this reddit post](https://www.reddit.com/r/dataisbeautiful/comments/cy02do/analysis_of_lead_characters_dialogue_from_the_tv/) for the TV show "Community," which was itself apparently inspired by something similar for The Office.
 
@@ -11,7 +11,7 @@ The scripts are all pulled from [Springfield! Springfield!](https://www.springfi
 
 - All punctuation is removed, most notably and importantly hyphens. Hyphenated compound words will appear as a single word. This doesn't seem to have really affected the outcome of the analysis, but it may mildly alter certain TF-IDF values and term frequencies (the ones that immediately come to mind are "we'll" and "i'll").
 
-- I do realize that NLTK and scikit-learn have their own versions of TF-IDF already implemented; I just implemented my own because it seemed fun and relatively simple to do, as TF-IDF is not a particularly complicated heuristic to understand.
+- I do realize that NLTK and scikit-learn have their own versions of TF-IDF already implemented; I just implemented my own for the visualization because it seemed fun and relatively simple to do, as TF-IDF is not a particularly complicated heuristic to understand. For the prediction model though, I did use NLTK/scikit-learn because it's easier to work with, in terms of the format of the TF-IDF data.
 
 - Each "document" is defined as a single episode (so there are 122 possible "documents" in total). I only included a document in the computation of a character's IDF score if the character appeared in that episode (e.g. Andy was missing for the beginning of Season 6, ostensibly temporarily working in London). I don't know if this was totally right to do, so maybe someone more knowledgeable on NLP can correct me if it isn't.
 
